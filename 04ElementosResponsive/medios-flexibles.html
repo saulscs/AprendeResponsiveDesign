@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>Medios Flexibles</title>
+	<meta name="description" content="En este documento explicaremos el concepto de medios flexibles en el Responsive Design">
+	<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">Medios Flexibles</h1>
+		<a class="container  margin  center" href="index.html">regresar</a>
+		<hr class="margin">
+		<p>
+			Un medio es todo aquello que no es texto, las siguientes etiquetas son ejemplos de medios:
+		</p>
+		<ul class="container">
+			<li class="item  c3  inline-block  top  center">IMG</li>
+			<li class="item  c3  inline-block  top  center">AUDIO</li>
+			<li class="item  c3  inline-block  top  center">VIDEO</li>
+			<li class="item  c3  inline-block  top  center">IFRAME</li>
+			<li class="item  c3  inline-block  top  center">CANVAS</li>
+			<li class="item  c3  inline-block  top  center">SVG</li>
+			<li class="item  c3  inline-block  top  center">PICTURE</li>
+			<li class="item  c3  inline-block  top  center">OBJECT</li>
+			<li class="item  c3  inline-block  top  center">EMBED</li>
+			<li class="item  c3  inline-block  top  center">MAP</li>
+			<li class="item  c3  inline-block  top  center">AREA</li>
+		</ul>
+		<p>
+			En el Responsive Design un medio debe ser flexible y adaptarse al tamaño de su contenedor, lo podemos lograr con las siguiente regla CSS
+		</p>
+		<pre>
+			<code>
+img, audio, video, iframe, canvas, svg, picture {
+	max-width:100%;
+	width:100%;
+	height: auto;
+}			
+			</code>
+		</pre>
+	</section>
+</body>
+</html>

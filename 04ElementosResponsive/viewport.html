@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>Viewport</title>
+	<meta name="description" content="En este documento explicaremos la función de la etiqueta viewport en el Responsive Design">
+	<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">Viewport</h1>
+		<a class="container  margin  center" href="index.html">regresar</a>
+		<hr class="margin">
+		<div class="container">
+			<p>
+				El  viewport fue  introducido  por  Apple  en  safari  móvil,  para  ayudar  a mejorar la presentación de los sitios en dispositivos como el iPhone, iPod Touch  o  iPad;  posteriormente  se  volvió un  estándar  en  todos  los navegadores.
+			</p>
+			<p>
+				La  etiqueta viewport  es  el  área  visible  de  nuestro  navegador y nos permite definir el ancho, alto y escala del área usada por el navegador para mostrar el contenido.
+			</p>
+			<p class="center">
+				<a class="center" href="http://viewportsizes.com/" target="_blank">viewport sizes</a>
+			</p>
+			<img class="half" src="http://bextlan.com/img/para-cursos/viewport.png">
+		</div>
+		<hr class="margin">
+		<p>
+			Si no agregamos esta meta etiqueta a nuestros documentos HTML tendremos problemas de visualización.
+		</p>
+		<div class="container  font-0  center">
+			<h3 class="item  c6  inline-block  top  right">Con viewport</h3>
+			<h3 class="item  c6  inline-block  top  left">Sin viewport</h3>
+			<img class="item  c6  inline-block  top  quarter" src="http://bextlan.com/img/para-cursos/con-viewport.png">
+			<img class="item  c6  inline-block  top  quarter" src="http://bextlan.com/img/para-cursos/sin-viewport.png">
+		</div>
+		<hr class="margin">
+		<p>
+			El viewport tiene 6 atributos importantes:
+		</p>
+		<ol>
+			<li><b>width</b>: define el ancho visible, suele usarse la constante device-width para que se adapte al ancho del dispositivo.</li>
+			<li><b>height</b>: define  el  alto  visible,  suele  usarse  la  constante device-height para que se adapte al alto del dispositivo.</li>
+			<li><b>initial-scale</b>: define  la  escala inicial  a  la  que  deberá  visualizarse el contenido, siendo 1 el 100%.</li>
+			<li><b>minimum-scale</b>: define  la  escala  mínima  a  la  quese  podrá hacer  zoom  al  contenido,  por  ejemplo  si  se  configura  .5 significa que se podrá hacer un zoom de hasta el 50%.</li>
+			<li><b>maximum-scale</b>: define  la  escala  máxima  a  la  quese  podrá hacer  zoom  al  contenido,  por  ejemplo  si  se  configura  3  significa que se podrá hacer un zoom de hasta el 300%.</li>
+			<li><b>user-scalable</b>: define   si   el   usuario   puede   escalar   o   no   el contenido, sus valores son yes por defecto y no para bloquear esta propiedad.</li>
+		</ol>
+		<hr class="margin">
+		<article>
+			<p>
+				De los 6 atributos mencionados, hay 2 que son muy importantes definir el ancho y la escala inicial, para que  el contenido se adapte al tamaño del  dispositivo.
+			</p>
+			<p>
+				Adicionalmente  se  recomienda  que  no  se  especifique  la máxima escala, ni bloquear la capacidad de escalar el contenido, ya que independientemente  de  que  el  documento  se  diseñe  con  responsive, algunos  usuarios  con  capacidades  visuales  diferentes,  podrían  tener problemas  al  ver  el  contenido  y  desearían  aumentar  el  tamaño  del contenido,  si  definimos  una  escala  máxima  o  bloqueamos  la  capacidad de  escalar  el  contenido  produciremos  en  estos  usuarios  una  mala  y frustrante  experiencia  de  usuario. 
+			</p>
+			<p>
+				La  propiedad  del  alto  es  opcional definirla,   se   utilizara   cuando   necesitemos   condicionar   el   alto   del contenido.
+			</p>
+			<p>
+				Por  lo  anterior  la  etiqueta  meta  viewport  tendría  que  definirse  de  la siguiente manera:
+			</p>
+			<pre class="center">
+				<code>
+&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;
+				</code>
+			</pre>
+		</article>
+	</section>
+</body>
+</html>

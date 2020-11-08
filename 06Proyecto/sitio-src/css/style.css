@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'batman';
+    src: url('../fonts/batman_evolution_logo_font_g-webfont.eot');
+    src: url('../fonts/batman_evolution_logo_font_g-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/batman_evolution_logo_font_g-webfont.woff2') format('woff2'),
+         url('../fonts/batman_evolution_logo_font_g-webfont.woff') format('woff'),
+         url('../fonts/batman_evolution_logo_font_g-webfont.ttf') format('truetype'),
+         url('../fonts/batman_evolution_logo_font_g-webfont.svg#batman_evolution_logo_fontRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.allvh { min-height: 100vh; }
+
+.fixed-top { padding-top: 6rem; }
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	background-color: #000;
+}
+
+.logo {
+	width: 4rem;
+	height: 4rem;
+	text-indent: 9999px;
+	background: transparent url("../img/logo-batman.svg") no-repeat left;
+	background-size: contain;
+}
+
+.menu { font-weight: 700; }
+
+.home { background: #000 url("../img/fondo-home.jpg") no-repeat center; }
+
+.home h2 {
+	margin: 40vh auto 0;
+	font-size: 20vw;
+	font-weight: 900;
+	color: #EECF27;
+	letter-spacing: 1vw;
+}
+
+.batman-img { max-width: 50%; }
+
+.logos ul { font-family: "batman"; }
+
+@media screen and (min-width: 30em) {   }
+
+@media screen and (min-width: 48em) { 
+	.batman-img { max-width: 100%; }
+
+	.logos-video iframe {
+		max-width: 850px;
+		height: 480px;
+	}
+
+	.rslides {
+		max-width: 640px;
+		margin: auto;
+	}
+}
+
+@media screen and (min-width: 64em) { 
+	.batman-img { max-width: 75%; }
+
+	.home h2 { font-size: 15vw; }
+}

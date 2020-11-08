@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>CSS: PRESENTACIÓN</title>
+	<meta name="description" content="En este documento explicaremos porqué HTML5 es la base del Responsive Design">
+	<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">CSS</h1>
+		<a class="container  margin  center" href="index.html">regresar</a>
+		<hr class="margin">
+		<h2 class="center">PRESENTACIÓN</h2>
+		<ul>
+			<li>Lenguaje de reglas basado en una sintaxis atributo:valor</li>
+			<li>Provee presentación (diseño) a las estructuras HTML</li>
+		</ul>
+		<hr class="margin">
+		<h2 class="center">TIPOS SELECTORES</h2>
+		<p><a class="container  margin  center" href="http://librosweb.es/libro/css_avanzado/capitulo_3.html" target="_blank">Para estudiar</a></p>
+		<ul>
+			<li>
+				<h3>Etiquetas</h3>
+				<code>p { ... }</code>
+			</li>
+			<li>
+				<h3>Id's</h3>
+				<code>#menu { ... }</code>
+			</li>
+			<li>
+				<h3>Clases</h3>
+				<code>.item { ... }</code>
+			</li>
+			<li>
+				<h3>Universal</h3>
+				<code>* { ... }</code>
+			</li>
+			<li>
+				<h3>Descendiente (espacio en blanco)</h3>
+				<code>.menu a { ... }</code>
+			</li>
+			<li>
+				<h3>de Hijos</h3>
+				<code>.menu > li { ... }</code>
+			</li>
+			<li>
+				<h3>de Hermanos</h3>
+				<code>section ~ article { ... }</code>
+			</li>
+			<li>
+				<h3>Adyacentes</h3>
+				<code>h1 + h2 { ... }</code>
+			</li>
+			<li>
+				<h3><a href="http://librosweb.es/libro/css_avanzado/capitulo_3/selector_de_atributos.html" target="_blank">de Atributos</a></h3>
+				<code>input[type="text"] { ... }</code>
+			</li>
+			<li>
+				<h3>Pseudo-selectores</h3>
+				<p>Nos ayudan a aplicar estilos  especiales a nuestros elementos HTML, dependiendo de su contexto, posición o estado</p>
+				<ol>
+					<li>
+						<h3>Pseudo-clases</h3>
+						<ul>
+							<li>
+								<h4>Estatus de Enlaces</h4>
+								<code>:link :visited</code>
+							</li>
+							<li>
+								<h4>Interacciones del Usuario</h4>
+								<code>:active :hover :focus</code>
+							</li>
+							<li>
+								<h4>Elementos de Formularios</h4>
+								<code>:checked :disabled :in-range :invalid :out-of-range :required :target :valid</code>
+							</li>
+							<li>
+								<h4><a href="https://css-tricks.com/examples/nth-child-tester/" target="_blank">Posición del Elemento</a></h4>
+								<code>:first-child :first-of-type :last-child :last-of-type :nth-child() :nth-last-child() :nth-of-type() :only-child :only-of-type 						:default</code>
+							</li>
+							<li>
+								<h4>CSS3</h4>
+								<code>:dir() :empty :first :fullscreen :indeterminate :lang() :left :not() :optional :read-only :read-write :right :root :scope</code>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Pseudo-elementos</h3>
+						<ul>
+							<li><code>::after { content:" " }</code></li>
+							<li><code>::before { content:" " }</code></li>
+							<li><code>::first-letter</code></li>
+							<li><code>::first-line</code></li>
+							<li><code>::selection</code></li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+		</ul>
+		<hr class="margin">
+		<h2 class="center">UNIDADES DE MEDIDA</h2>
+		<ul>
+			<li>
+				<h3>Absolutas</h3>
+				<p>px, pt, pc, cm, mm, in</p>
+			</li>
+			<li>
+				<h3>Relativas</h3>
+				<ul>
+					<li>
+						al Contenedor
+						<ul>
+							<li>% (Porcentajes)</li>
+						</ul>
+					</li>
+					<li>
+						a la Tipografía
+						<ul>
+							<li>em basada en la anchura de la letra</li>
+							<li>ex basada en la altura de la letra</li>
+							<li>rem es el em del elemento raiz (html)</li>
+						</ul>
+					</li>
+					<li>
+						al Viewport
+						<ul>
+							<li>vw anchura del viewport</li>
+							<li>vh altura del viewport</li>
+							<li>vmax entre vw y vh toma el que tenga mayor valor</li>
+							<li>vmin entre vw y vh toma el que tenga menor valor</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<h3><a href="http://pxtoem.com/" target="_blank">Equivalencias</a></h3>
+				<p><b>100%  =  1em  = 16px  =  12pt</b></p>
+			</li>
+		</ul>
+		<hr class="margin">
+		<h2 class="center">PATRONES</h2>
+		<ul>
+			<li>Son buenas prácticas de como hacer CSS basados en DRY (Don't Repeat Yourself), útiles cuando trabajamos en equípo</li>
+			<li>Código CSS reusable, modular y óptimo</li>
+		</ul>
+		<ol>
+			<li>
+				<h3>FRAMEWORKS</h3>
+				<ul>
+					<li>
+						<h4>VENTAJAS</h4>
+						<ul>
+							<li>Facil de probar</li>
+							<li>Flujo de trabajo definido</li>
+							<li>Sintaxis similar</li>
+							<li>Fuentes de Aprendizaje</li>
+							<li>Ideal para trabajos que eran para ayer</li>
+						</ul>
+					</li>
+					<li>
+						<h4>DESVENTAJAS</h4>
+						<ul>
+							<li>Convenciones ajenas</li>
+							<li>Globales</li>
+							<li>Impersonalizables</li>
+							<li>Incompatibilidades</li>
+							<li>Sobrecarga del DOM</li>
+							<li>Generan codependencia</li>
+							<li>Mala idea para aprender a maquetar</li>
+						</ul>
+					</li>
+					<li>
+						<h4>EJEMPLOS</h4>
+						<ul>
+							<li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+							<li><a href="http://foundation.zurb.com/" target="_blank">Foundation</a></li>
+							<li><a href="http://purecss.io/" target="_blank">Pure CSS</a></li>
+							<li><a href="https://jquerymobile.com/" target="_blank">jQueryMobile</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<h3><a href="http://oocss.org/" target="_blank">OOCSS</a></h3>
+				<p>CSS Orientado a Objetos</p>
+			</li>
+			<li>
+				<h3><a href="https://en.bem.info/" target="_blank">BEM</a></h3>
+				<p>Bloque-Elemento-Modificador</p>
+				<p>Estructura</p>
+				<ul>
+					<li>.bloque { ... }</li>
+					<li>.bloque__elemento { ... }</li>
+					<li>.bloque--modificador { ... }</li>
+				</ul>
+				<p>Ejemplo</p>
+				<ul>
+					<li>.menu { ... }</li>
+					<li>.menu__item { ... }</li>
+					<li>.menu__item--hover{ ... }</li>
+				</ul>
+			</li>
+			<li>
+				<h3><a href="http://sathify.github.io/CCSS/" target="_blank">CCSS</a></h3>
+				<p>Componentes CSS</p>
+				<p>Estructura</p>
+				<ul>
+					<li>ComponentName  Standard Components (B)</li>
+					<li>ComponentName-elementName  Component's Element (E)</li>
+					<li>ComponentName--modifierName  Component's Modifier (M)</li>
+				</ul>
+				<p>Ejemplo</p>
+				<ul>
+					<li>u-className Global base/utility classes</li>
+					<li>img-className Global image classes</li>
+					<li>animate-className Global animation classes</li>
+				</ul>
+			</li>
+			<li>
+				<h3>ATOMIC DESIGN</h3>
+				<ul>
+					<li><a href="http://bradfrost.com/blog/post/atomic-web-design/" target="_blank">Artículo</a></li>
+					<li><a href="http://es.slideshare.net/bradfrostweb/atomic-design" target="_blank">Slides</a></li>
+					<li><a href="http://smm.zoomquiet.io/data/20110511083224/index.html" target="_blank">Tabla periódica de las etiquetas HTML</a></li>
+					<li><a href="http://demo.patternlab.io/" target="_blank">Ejemplos</a></li>
+					<li>
+						<p>Ventajas</p>
+						<ul>
+							<li>Metodología</li>
+							<li>Sistema de Diseño Eficaz</li>
+							<li>Transversal y Constructivo</li>
+						</ul>
+					</li>
+				</ul>
+				<img src="http://bextlan.com/img/para-cursos/atomic-design.png">
+				<ol>
+					<li>
+						<h3>Átomos</h3>
+						<ul>
+							<li>Etiquetas HTML</li>
+							<li>Elementos básicos</li>
+							<li>Abstracción</li>
+							<li>No segmentables</li>
+							<li>Poco útiles en si mismos</li>
+							<li>Fácil manipulación</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Moleculas</h3>
+						<ul>
+							<li>Clases CSS</li>
+							<li>Grupo de átomos unidos</li>
+							<li>Más específico</li>
+							<li>Pueden repetirse</li>
+							<li>Son los huesos del esqueleto</li>
+							<li>Escalabilidad</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Organismos</h3>
+						<ul>
+							<li>Secciones de contenido (Cabecera, Pie, Menú, etc)</li>
+							<li>Compuestos por Moléculas</li>
+							<li>Entidad propia</li>
+							<li>Reusables</li>
+							<li>Escalables</li>
+							<li>Personalizables</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Plantillas</h3>
+						<ul>
+							<li>Wireframes</li>
+							<li>Documento HTML</li>
+							<li>Muy concreto</li>
+							<li>Visibilidad Cliente=DECISIONES</li>
+							<li>Futurible Proyecto Final</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Páginas</h3>
+						<ul>
+							<li>Plantilla con contenido (Versión Final)</li>
+							<li>Instancias Específicas</li>
+							<li>Contenido Final</li>
+							<li>Proceso de Testing</li>
+							<li>Proyecto Final</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+		</ol>
+		<hr class="margin">
+		<h2 class="center">BUENAS PRÁCTICAS DE CÓDIGO CSS</h2>
+		<ul>
+			<li>Separar nombre de selectores con el guión medio (-) y escribir en minúsculas</li>
+			<li>Preferir links sobre @import para llamar las hojas de estilo</li>
+			<li>Definir siempre un font-size al elemento root (html) y hacerlo en px</li>
+			<li>Ser cuidadoso con la definición de reglas a selectores de etiquetas</li>
+			<li>Evitar definición de selectores de ID</li>
+			<li>Usar en su mayoria selectores de clases</li>
+			<li>Aprovechar los pseudo-selectores y unidades de medida disponibles</li>
+			<li>
+				Tener precaución con los shorthand de CSS
+				<ul>
+					<li><code>padding, margin, font, background, border, border-radius</code></li>
+					<li>preferible <code><b>background-color: #FFF</b></code> que <code><b>background: #FFF</b></code></li>
+				</ul>
+			</li>
+			<li>
+				Normalizar los estilos iniciales de nuestras etiquetas HTML
+				<ul>
+					<li><a href="http://meyerweb.com/eric/tools/css/reset/" target="_blank">Reset.css</a></li>
+					<li><a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a></li>
+					<li>Definir uno propio que se adapte a nuestra técnica de maquetación y no te olvides del <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/" target="_blank">box-sizing</a></li>
+				</ul>
+			</li>
+			<li>Maquetar bajo un enfoque Mobile First</li>
+		</ul>
+		<hr class="margin">
+		<h2 class="center">ORDENAR CÓDIGO CSS</h2>
+		<ol>
+			<li>Ir de lo General a lo Particular (Aprovechar la Cascada CSS)</li>
+			<li>Código para resetear</li>
+			<li>Selectores de Etiqueta - (<b><small>Átomos</small></b>)</li>
+			<li>Selectores de ID si hubiera - (<b><small>Átomos</small></b>)</li>
+			<li>Clases de Estilo: Tipografías, Colores, Tamaños, Estados, etc - (<b><small>Moléculas</small></b>)</li>
+			<li>Clases de Estructura: Visualización y Maquetación - (<b><small>Moléculas</small></b>)</li>
+			<li>Clases de Objetos específicos: Botones, enlaces, textos, items, imágenes, celdas etc - (<b><small>Organismos</small></b>)</li>
+			<li>Clases de Componentes específicos: Logos, listas, formularios, tablas, figuras, acordeónes, menús, páneles, widgets - (<b><small>Organismos</small></b>)</li>
+			<li>Clases de Secciones específicas: Cabecerá, piés de páginas, navegaciones, contenidos principales, secundarios, galerías, etc - (<b><small>Organismos</small></b>)</li>
+			<li>Clases de Contenido específico de páginas: Página de Autenticación de Usuarios, Galería Multimedia del Home, Formulario de la zona de Contacto, Página de Productos, etc - (<b><small>Plantillas y Páginas</small></b>)</li>
+			<li>
+				Mediaqueries
+				<ul>
+					<li>Preferir Mobile First a Desktop First</li>
+					<li>Seguir el patrón del Diseño Atómico</li>
+				</ul>
+			</li>
+		</ol>
+		<hr class="margin">
+		<h2 class="center">ORDENAR ATRIBUTOS CSS</h2>
+		<p>La formula de la PC-TV</p>
+		<ol>
+			<li>
+				<h3>Posicionamiento</h3>
+				<code>position, top, left, right, bottom, clear, z-index</code>
+			</li>
+			<li>
+				<h3>Modelo de Caja</h3>
+				<code>display, float, margin, padding, width, height</code>
+			</li>
+			<li>
+				<h3>Tipografia</h3>
+				<code>font-family, font-size, line-height, color, text-align</code>
+			</li>
+			<li>
+				<h3>Visual</h3>
+				<code>background-color, border, border-radius, outline, opacity</code>
+			</li>
+		</ol>
+		<hr class="margin">
+		<h2 class="center">Con estas recomendaciones estarás en camino de construir tu propio FRAMEWORK (:</h2>
+	</section>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>Fuentes</title>
+	<meta name="description" content="En este documento explicaremos el concepto de fuentes en el Responsive Design">
+	<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">Fuentes</h1>
+		<a class="container  margin  center" href="index.html">regresar</a>
+		<hr class="margin">
+		<ul>
+			<li>
+				Recuerda siempre asignar un tamaño de fuente base a tu etiqueta html en pixeles
+				<pre>
+					<code>
+html { font-size: 16px; }		
+					</code>
+				</pre>
+			</li>
+			<li>Podemos usar <b>em</b>s que son relativos al tamaño de letra del elemento padre</li>
+			<li>Podemos usar <b>rem</b>s que son relativos al tamaño de letra del elemento html</li>
+			<li><a href="http://caniuse.com/#search=rem" target="_blank">¿Puedo usar rems?</a></li>
+			<li>
+				Si quieres seguir pensando en pixeles tendras que usar la siguiente formula:
+				<ul>
+					<li>
+						<p>Para convertir a ems</p>
+						<p><b>Objetivo en pixeles / Contexto en pixeles = Resultado en Ems</b></p>
+						<p>
+							Ejemplos:<br>
+							<b>32px / 16px = 2em</b><br>
+							<b>24px / 16px = 1.5em</b><br>
+							<b>16px / 16px = 1em</b><br>
+							<b>12px / 16px = .75em</b><br>
+							<b>8px / 16px = .5em</b>
+						</p>
+					</li>
+					<li>
+						<h3><a href="http://pxtoem.com/" target="_blank">Equivalencias</a></h3>
+						<p><b>100%  =  1em  = 16px  =  12pt</b></p>
+					</li>
+				</ul>
+			</li>
+			<li>Recuerda que el tamaño de fuente afecta al <b>margin</b> y <b>padding</b>, por lo que es recomendable expresar estas propiedades en ems o rems</li>
+			<li>Recuerda que puedes usar vh y vw cuando el tamaño dependa del viewport o requieras posicionamiento absoluto basado en el viewport</li>
+			<li><a href="http://caniuse.com/#search=vw" target="_blank">¿Puedo usar viewports units?</a></li>
+		</ul>
+		<hr class="margin">
+		<h1 class="center">Tipos de Fuentes</h1>
+		<p>
+			Podemos trabajar con fuentes:
+		</p>
+		<ol>
+			<li>
+				<h2>Tipográficas</h2>
+				<ul>
+					<li>
+						<h3>Locales</h3>
+						<ul>
+							<li>Con <a href="http://caniuse.com/#search=font-face" target="_blank">@font-face</a> y <a href="http://caniuse.com/#search=woff" target="_blank">.woff</a></li>
+							<li><a href="http://www.fontsquirrel.com/tools/webfont-generator" target="_blank">Convertidor de Fuentes</a></li>
+							<li><a href="https://www.youtube.com/watch?v=p-ZjVEhMt2U" target="_blank">Más Info</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3>Externas</h3>
+						<ul>
+							<li>Con <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<h2>Icónicas</h2>
+				<ul>
+					<li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a></li>
+					<li><a href="https://icomoon.io/" target="_blank">Ico Moon</a></li>
+					<li><a href="https://github.com/filamentgroup/a-font-garde" target="_blank">A Font Garde</a></li>
+				</ul>
+			</li>	
+		</ol>
+	</section>
+</body>
+</html>

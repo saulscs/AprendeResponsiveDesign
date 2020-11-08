@@ -1,0 +1,177 @@
+/* reset */
+
+html {
+	box-sizing: border-box;
+	padding: 1rem;
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+}
+
+a { 
+	color: #FF5700;
+	font-size: inherit;
+}
+
+a:hover { color: #205081; }
+
+h1 { font-size: 2rem; }
+
+h2 { font-size: 1.5rem; }
+
+h3 { font-size: 1.25rem; }
+
+h4 { font-size: 1rem }
+
+h5 { font-size: .75rem; }
+
+h6 { font-size: .5rem; }
+
+img, svg { 
+	display: block;
+	margin: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+li {
+	margin: auto;
+	margin-left: 1rem;
+	padding: 1rem;
+	list-style-position: outside;
+}
+
+p {
+	padding: 16px;
+	padding: 1rem;
+}
+
+pre {
+	display: block;
+	margin: auto;
+	padding: 1rem;
+	width: 90%;
+	word-wrap: break-word;
+	color: #FFF;
+	background-color: #222;
+}
+
+small { font-size: .75rem; }
+
+
+/* grid */
+
+
+.container, .container-fluid {
+	display: block;
+	width: 100%;
+	margin: auto;
+}
+
+.container { max-width: 1200px; }
+
+.item {
+	padding: 1rem;
+	line-height: auto;
+}
+
+.c12 { width: 100%; }
+
+.c11 { width: 91.66666666666667%; }
+
+.c10 { width: 83.33333333333333%; }
+
+.c9 { width: 75%; }
+
+.c8 { width: 66.66666666666667%; }
+
+.c7 { width: 58.33333333333333%; }
+
+.c6 { width: 50%; }
+
+.c5 { width: 41.66666666666667%; }
+
+.c4 { width: 33.33333333333333%; }
+
+.c3 { width: 25%; }
+
+.c2 { width: 16.66666666666667%; }
+
+.c1 { width: 8.333333333333333%; }
+
+
+/* layout */
+
+
+.inline-block { display: inline-block; }
+
+.top { vertical-align: top; }
+
+.middle { vertical-align: middle; }
+
+.bottom { vertical-align: middle; }
+
+.flex { display: flex; }
+
+.flex-item { flex: none; }
+
+
+/* styles */
+
+.font-4 { font-size: 4rem; }
+
+.font-3 { font-size: 3rem; }
+
+.font-2 { font-size: 2rem; }
+
+.font-1_75 { font-size: 1.75rem; }
+
+.font-1_5 { font-size: 1.5rem; }
+
+.font-1_25 { font-size: 1.25rem; }
+
+.font-0_75 { font-size: .75rem; }
+
+.font-0_5 { font-size: .5rem; }
+
+.font-0_25 { font-size: .25rem; }
+
+.font-0 { font-size: 0; }
+
+.left { text-align: left; }
+
+.right { text-align: right; }
+
+.center { text-align: center; }
+
+.margin { margin: 1rem auto }
+
+.half { max-width: 50%; }
+
+.quarter { max-width: 25%; }
+
+.cent { max-width: 10%; }
+
+.gray { background-color: #CCC; }
+
+.logo { font-size: 1rem; }
+
+@media screen and (min-width: 30em){
+	/* .logo { background-color: red; } */
+
+	.logo { font-size: 1.5rem; }
+}
+
+@media screen and (min-width: 48em){
+	/* .logo { background-color: green; } */
+
+	.logo { font-size: 2rem; }
+
+	.logo-img { max-width: 50%; }
+}

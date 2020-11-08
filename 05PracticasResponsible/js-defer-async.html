@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>JS Diferido y Asíncrono</title>
+	<meta name="description" content="En este documento explicaremos el concepto de JS Diferido y Asíncrono en el Responsible Design">
+	<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">JS Diferido y Asíncrono</h1>
+		<a class="container  margin  center" href="index.html">regresar</a>
+		<hr class="margin">
+		<h2>JS Diferido</h2>		
+		<p>
+			El atributo <b>defer</b> es booleano, cuando está presente, especifica que el script se ejecuta cuando la página ha terminado de cargarse. Sólo debe usarse para scripts externos.
+		</p>
+		<p>
+			<a href="http://caniuse.com/#search=defer" target="_blank">¿Puedo usarlo?</a>
+		</p>
+		<p>
+			<pre>
+				<code>
+&lt;script src="js/mi-codigo.js" defer&gt;&lt;/script&gt;
+				</code>
+			</pre>
+		</p>
+		<h2>JS Asíncrono</h2>
+		<p>
+			El atributo <b>async</b> es booleano, cuando está presente, especifica que la secuencia de comandos se ejecutará de forma asíncrona tan pronto como esté disponible. Sólo debe usarse para scripts externos.
+		</p>
+		<p>
+			<a href="http://caniuse.com/#search=async" target="_blank">¿Puedo usarlo?</a>
+		</p>
+		<p>
+			<pre>
+				<code>
+&lt;script src="js/mi-codigo.js" aync&gt;&lt;/script&gt;
+				</code>
+			</pre>
+		</p>
+	</section>
+</body>
+</html>

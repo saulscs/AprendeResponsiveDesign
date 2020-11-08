@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>Hacks CSS y JS</title>
+	<meta name="description" content="En este documento explicaremos el concepto de Hacks CSS y JS en el Responsible Design">
+	<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">Hacks CSS y JS</h1>
+		<a class="container  margin  center" href="index.html">regresar</a>
+		<hr class="margin">
+		<p>
+			Sirven para tratar con las inconsistencias de navegadores viejos, en la medida de lo posible la recomendación es evitarlos, sin embargo cuando se requiere de dicho soporte son una buena opción
+		</p>
+		<p>
+			<pre>
+				<code>
+&lt;link href="all_browsers.css" rel="stylesheet" type="text/css"&gt;
+
+&lt;!--[if IE]&gt; &lt;link href="ie_only.css" rel="stylesheet" type="text/css"&gt; &lt;![endif]--&gt;
+
+&lt;!--[if lt IE 7]&gt; &lt;link href="ie_6_and_below.css" rel="stylesheet" type="text/css"&gt; &lt;![endif]--&gt;
+
+&lt;!--[if !lt IE 7]&gt;&lt;![IGNORE[--&gt;&lt;![IGNORE[]]&gt; &lt;link href="recent.css" rel="stylesheet" type="text/css"&gt; &lt;!--&lt;![endif]--&gt;
+
+&lt;!--[if !IE]&gt;--&gt; &lt;link href="not_ie.css" rel="stylesheet" type="text/css"&gt; &lt;!--&lt;![endif]--&gt;					
+				</code>
+			</pre>
+		</p>
+		<ul>
+			<li><a href="http://browserhacks.com/" target="_blank">Browser Hacks</a></li>
+			<li><a href="http://www.webdevout.net/css-hacks" target="_blank">Más Info</a></li>
+		</ul>
+	</section>
+</body>
+</html>

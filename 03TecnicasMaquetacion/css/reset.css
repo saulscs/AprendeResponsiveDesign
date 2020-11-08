@@ -1,0 +1,29 @@
+html {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	font-size: 16px;
+	text-align: center;
+	background-color: #205081;
+	color: #FFF;
+}
+
+*, *::after, *::before {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+}
+
+a { color: #FF5700; }
+
+a:hover { color: #FFF; }
+
+h1 { font-size: 2rem; }
+
+h2 { font-size: 1.5rem; }
+
+li {
+	margin-left: 1rem;
+	list-style-type: inherit;
+	list-style-position: inside;
+}

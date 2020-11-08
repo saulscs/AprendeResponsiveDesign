@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>Minificación y Concatenación de CSS y JS</title>
+	<meta name="description" content="En este documento explicaremos el concepto de Minificación y Concatenación de CSS y JS en el Responsible Design">
+	<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">Minificación y Concatenación de CSS y JS</h1>
+		<a class="container  margin  center" href="index.html">regresar</a>
+		<hr class="margin">
+		<h2>Minificación</h2>
+		<p>
+			Es el proceso para comprimir archivos CSS o JS, que consiste en quitar espacíos en blanco, indentación con la intención de reducir el peso del archivo, por ejemplo la librería jquery en su versión <a href="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js" target="_blank">normal</a> pesa alrededor de <b>240KB</b> y la versión <a href="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" target="_blank">minificada</a> sólo <b>80KB</b> reduciendo su peso original en una tercera parte.
+		</p>
+		<h2>Concatenación</h2>
+		<p>
+			Es el proceso de unir en un sólo archivo todos los CSS y JS que cargue un sitio con la intención de reducir las peticiones HTTP que se hacen al servidor, por ejemplo si una web tiene 3 hojas de estilo y 4 scripts cuando un usuario acceda a ella hará 7 peticiones HTTP, si concatenamos los archivos en uno sólo, las peticiones se reducirán a 2, una por el CSS y otra por el JS ambos con el contenido unificado de los demás archivos.
+		</p>
+		<ul>
+			<li><a href="http://cssminifier.com/" target="_blank">CSS Minifier</a></li>
+			<li><a href="http://jscompress.com/" target="_blank">JS Compress</a></li>
+			<li><a href="http://kangax.github.io/html-minifier/" target="_blank">HTML Minifier</a></li>
+			<li><a href="https://www.npmjs.com/package/grunt-contrib-cssmin" target="_blank">grunt-contrib-cssmin</a></li>
+			<li><a href="https://www.npmjs.com/package/grunt-contrib-uglify" target="_blank">grunt-contrib-uglify</a></li>
+			<li><a href="https://www.npmjs.com/package/grunt-contrib-htmlmin" target="_blank">grunt-contrib-htmlmin</a></li>
+			<li><a href="https://www.npmjs.com/package/grunt-contrib-concat" target="_blank">grunt-contrib-concat</a></li>
+			<li><a href="https://www.npmjs.com/package/gulp-minify-css" target="_blank">gulp-minify-css</a></li>
+			<li><a href="https://www.npmjs.com/package/gulp-uglify" target="_blank">gulp-uglify</a></li>
+			<li><a href="https://www.npmjs.com/package/gulp-minify-html" target="_blank">gulp-minify-html</a></li>
+			<li><a href="https://www.npmjs.com/package/gulp-concat" target="_blank">gulp-concat</a></li>
+		</ul>
+	</section>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Posicionamiento CSS</title>
+	<style>
+		html {
+			font-family: sans-serif;
+			font-size: 16px;
+		}
+
+		div {
+			position: static;
+			width: 300px;
+			height: 100px;
+			text-align: center;
+			color: #FFF;
+			background-color: #205081;
+			border: thin solid #FF5700;
+		}
+
+		/* div:nth-child(3) { z-index: 1 } */
+
+		div:nth-of-type(3) { 
+			background-color: red;
+			z-index: 1
+		}
+
+		article, section {
+			width: 700px;
+			height: 200px;
+			color: #FFF;
+			background-color: #222;
+			border: thin solid #FF5700;
+		}
+
+		section {
+			position: relative;
+			width: 800px;
+			height: 400px;
+		}
+
+		.pos-rel {
+			position: relative;
+			top: -10px;
+			left: 250px;
+			/* 
+			bottom: -250px;
+			right: -150px;
+			*/
+		}
+
+		.pos-abs {
+			position: absolute;
+			top: 50px;
+			left: 250px;
+		}
+
+		.pos-fix {
+			position: fixed;
+			top: 0;
+			left: 100px;
+			z-index: -1;
+		}
+
+		.pos-sticky {
+			/* http://caniuse.com/#search=sticky */
+			position: sticky;
+			top: 0;
+			left: 100px;
+		}
+
+		.pos-float-left { float: left; }
+
+		.pos-float-right { float: right; }
+
+		.clear { clear: both; }
+	</style>
+</head>
+<body>
+	<h1>Tipos de Posicionamiento</h1>
+	<ul>
+		<li>Estático: Es el que viene por defecto un elemento detrás del otro</li>
+		<li>Relativo: Se desplaza respecto de su posición original</li>
+		<li>Absoluto: Se desplaza respecto de la posición del body del documento o del primer elemento padre que tenga y éste sea relativo</li>
+		<li>Fijo: Permite mantener fijo un elemento</li>
+		<li>Pegajoso: Posicionamiento experimental, permite que el elemento sea relativo o fijo dependiendo del area donde se visualiza</li>
+		<li>Flotante: Convierte un elemento en flotante desplazándolo hasta la zona más a la izquierda o más a la derecha de la posición en la que originalmente se encontraba</li>
+		<li><a href="http://librosweb.es/libro/css/capitulo_5.html" target="_blank">+ info</a></li>
+	</ul>
+	<div>
+		<h2>1 - Estático</h2>
+	</div>
+	<div class="pos-rel">
+		<h2>2 -  Relativo</h2>
+	</div>
+	<div class="pos-abs">
+		<h2>3 - Absoluto con body</h2>
+	</div>
+	<section>
+		<article>
+			<div class="pos-abs">
+				<h2>4 - Absoluto con padre relativo</h2>
+			</div>
+		</article>
+	</section>
+	<div class="pos-fix">
+		<h2>5 - Fijo</h2>
+	</div>
+	<div class="pos-sticky">
+		<h2>6 - Pegajoso</h2>
+	</div>
+	<div class="pos-float-left">
+		<h2>7 - Flotante Izquierda</h2>
+	</div>
+	<div class="pos-float-right">
+		<h2>8 - Flotante Derecha</h2>
+	</div>
+	<div class="pos-float-right">
+		<h2>9 - Flotante Derecha</h2>
+	</div>
+	<div class="clear">
+		<h2>10 - con clear para limpiar floats</h2>
+	</div>
+</body>
+</html>

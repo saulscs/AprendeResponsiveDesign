@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>Imágenes Retina</title>
+	<meta name="description" content="En este documento explicaremos el concepto de Medios Responsibles con Imágenes Retina en el Responsible Design">
+	<link rel="stylesheet" href="../estilos.css">
+	<style>
+		.retina
+		{
+			margin: auto;
+			height: 256px;
+			width: 256px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 256px 256px;
+		}
+
+		#logo-html5 { background-image: url("img/html5-logo.png"); }
+
+		@media only screen and (-ms-min-device-pixel-ratio:1.5), only screen and (min--moz-device-pixel-ratio:1.5), only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min-device-pixel-ratio:1.5){
+			
+			#logo-html5 { background-image: url("img/html5-logo@2x.png"); }	
+		}
+
+		.size256 {
+			width: 256px;
+			max-width: 16rem;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">Medios Responsibles con Imágenes Retina</h1>
+		<a class="container  margin  center" href="medios-responsibles.html">regresar</a>
+		<hr class="margin">
+		<h2>Retina Display</h2>
+		<p>
+			Es el concepto que comercialmente define a las pantallas de dispositivos que tienen mayor densidad de pixeles.
+		</p>
+		<p>
+			El efecto en dichas pantallas hace que todo lo que sea vectorial, como la tipografía, se vea muy nítido y claro; el problema surge con los mapas de bits, mejor conocidos como imágenes, ya que al ser estos definidos por un ancho y alto fijo, en pantallas com mayor densidad tienden a pixelizarse y verse borrosas, por lo que es necesario dar soporte a las imágenes de nuestro sitio para estas pantallas que desde el 2013 existen en computadoras, tabletas y smartphones.
+		</p>
+		<p>
+			En el sitio de <a href="http://screensiz.es/" target="_blank">Screen Sizes</a> puedes ver la densidad de pixeles (<b><small>aspect ratio</small></b>) de los diferentes dispositivos en el mercado.
+		</p>
+		<p>
+			Tenemos 4 formas de aplicar imágenes retina:
+		</p>
+		<ol>
+			<li>
+				<h2>Con Media Queries CSS</h2>
+				<ul>
+					<li>Se requiere aplicar una media queries con la propiedad <b>pixel-ratio:1.5</b></li>
+					<li><a href="http://caniuse.com/#search=pixel-ratio" target="_blank">¿Puedo usarla?</a> Hay que aplicarla con sus respectivos prefijos para todos los navegadores</li>
+					<li>Las imágenes hay que definirlas como fondos CSS</li>
+					<li>Cada imágen que se quiera en versión Retina hay que tener una copia físicamente guardada en el mismo directorio que la original y al doble de su tamaño con el mismo nombre seguido del sufijo <b>@2x</b></li>
+				</ul>
+				<p>
+					<pre>
+						<code>
+.retina
+{
+	margin: auto;
+	height: 256px;
+	width: 256px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 256px 256px;
+}
+
+#logo-html5 { background-image: url("img/html5-logo.png"); }
+
+@media 
+	only screen and (-ms-min-device-pixel-ratio:1.5),
+	only screen and (min--moz-device-pixel-ratio:1.5),
+	only screen and (-webkit-min-device-pixel-ratio:1.5),
+	only screen and (min-device-pixel-ratio:1.5)
+	{
+		#logo-html5 { background-image: url("img/html5-logo@2x.png"); }	
+}
+
+&lt;div class="retina" id="logo-html5"&gt;&lt;/div&gt;
+						</code>
+					</pre>
+				</p>
+				<div class="retina" id="logo-html5"></div>
+			</li>
+			<li>
+				<h2>Con Retina.JS</h2>
+				<ul>
+					<li>Hay que cargar en nuestra zona de scripts el archivo de <a href="http://imulus.github.io/retinajs/" target="_blank">Retina.js</a> y él hace la magía por nosotros</li>
+					<li>Cada imágen que se quiera en versión Retina hay que tener una copia físicamente guardada en el mismo directorio que la original y al doble de su tamaño con el mismo nombre seguido del sufijo <b>@2x</b></li>
+					<li>En el HTML hay que definir nuestras imágenes con la etiqueta <b>img</b> y cuando <b>Retina.JS</b> detecte que la densidad de pixeles de la pantalla del dispositivo es mayor, reemplazará en el <b>src</b> de nuestra imagen la normal por la <b>@2x</b>.</li>
+				</ul>
+				<p>
+					<pre>
+						<code>
+&lt;img src="img/html5-logo.png"&gt;
+
+&lt;script src="js/retina.min.js"&gt;&lt;/script&gt;
+						</code>
+					</pre>
+				</p>
+				<img src="img/html5-logo.png">
+			</li>
+			<li>
+				<h2>Con CSS puro</h2>
+				<ul>
+					<li>Sólo hay que tener una versión de la imagen</li>
+					<li>Sólo hay que especificar una regla CSS que defina que todas las imágenes crecerán como máximo a la mitad de su tamaño real</li>
+					<li>Esta técnica te conviene cuando todas las imágenes en tu sitio tienen las mismas dimensiones</li>
+					<li>Si tienes varios tamaños de imágenes tendrás que definir una regla por cada uno</li>
+					<li>El valor de anchura definelo en píxeles para navegadores viejos y en ems o rems para navegadores modernos</li>
+					<li>Ayudate de la formula para convertir pixeles a ems, el resultado divídelo entre 2 por que queremos visualizar la imágen a la mitad de su tamaño</li>
+				</ul>
+				<p>
+					<pre>
+						<code>
+.size256 {
+	width: 256px;
+	max-width: 16rem;
+	height: auto;
+}
+
+&lt;img class="size256" src="img/html5-logo@2x.png"&gt;
+						</code>
+					</pre>
+				</p>
+				<img class="size256" src="img/html5-logo@2x.png">
+			</li>
+			<li>
+				<h2>Con la etiqueta Picture</h2>
+				<p>Esta técnica se ve en el <a href="medios-responsibles.html">siguiente</a> tema</p>
+			</li>
+		</ol>
+	</section>
+	<script src="js/retina.min.js"></script>
+</body>
+</html>

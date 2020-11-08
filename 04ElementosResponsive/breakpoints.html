@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>Breakpoints</title>
+	<meta name="description" content="En este documento explicaremos el concepto de los breakpoints en el Responsive Design">
+	<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">Breakpoints</h1>
+		<a class="container  margin  center" href="index.html">regresar</a>
+		<hr class="margin">
+		<p>
+			Ethan Marcotte en su libro <i>Responsive Design</i> páginas 113-114 nos propone la siguiente lista de puntos de interrupción según la resolución del dispositivo:
+		</p>
+		<article class="container  font-0">
+			<p class="item  c3  inline-block  top  right">320px</p>
+			<p class="item  c9  inline-block  top  left">Para dispositivos con pantallas pequeñas, como los teléfonos en modo vertical</p>
+			<p class="item  c3  inline-block  top  right">480px</p>
+			<p class="item  c9  inline-block  top  left">Para dispositivos con pantallas pequeñas, como los teléfonos, en modo horizontal</p>
+			<p class="item  c3  inline-block  top  right">600px</p>
+			<p class="item  c9  inline-block  top  left">Tabletas pequeñas, como el Amazon Kindle (600×800) y Barnes & Noble Nook (600×1024), en modo vertical</p>
+			<p class="item  c3  inline-block  top  right">768px</p>
+			<p class="item  c9  inline-block  top  left">Tabletas de diez pulgadas como el iPad (768×1024), en modo vertical</p>
+			<p class="item  c3  inline-block  top  right">1024px</p>
+			<p class="item  c9  inline-block  top  left">Tabletas como el iPad (1024×768), en modo horizontal, así como algunas pantallas de ordenador portátil, netbook, y de escritorio</p>
+			<p class="item  c3  inline-block  top  right">1200px</p>
+			<p class="item  c9  inline-block  top  left">Para pantallas panorámicas, principalmente portátiles y de escritorio</p>
+		</article>
+		<p>
+			Con  la  tabla  que  Marcotte  nos  propone  prácticamente  están  cubiertos teléfonos inteligentes, tabletas, phablets, laptops,  netbooks, computadoras  de  escritorio  y  pantallas,  tanto  en  modo  vertical  como horizontal,   por   lo   que   con   estos   6   puntos   de   interrupción   sólo tendríamos que validar un solo atributo en las media queries: el <b>ancho</b>.
+		</p>
+		<p>
+			De cualquier  forma  en  el  sitio <a href="http://screensiz.es" target="_blank">screensiz.es</a>,  se  puede  estar revisando  constantemente  las  características  físicas  con  las  que  se fabrican los dispositivos.
+		</p>
+		<hr class="margin">
+		<h1 class="center">Importante...Convierte tus Breakpoints a EMs</h1>
+		<h2>¿Por qué?</h2>
+		<p>
+			Aunque los pixeles se consideran una unidad de medida absoluta, en realidad son unidades relativas a la resolución de pantalla del dispositivo que lo visualiza, si dicho dispositivo tiene una densidad mayor a la normal, entonces la proporción de los pixeles cambiará, por ello es importante que los breakpoints de las media queries se conviertan a ems que si son unidades relativas y proporcionales.
+		</p>
+		<p>Más info:</p>
+		<ul>
+			<li><a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/" target="_blank">The EMs have it: Proportional Media Queries </a></li>
+			<li><a href="https://css-tricks.com/why-ems/" target="_blank">Why Ems?</a></li>
+			<li><a href="http://inamidst.com/stuff/notes/csspx" target="_blank">CSS px is an Angular Measurement</a></li>
+		</ul>
+		<p>Recuerda la fórmula:</p>
+		<p class="center  font-1_5">
+			Objetivo en pixeles / Contexto en pixeles = Resultado en Ems<br><br>
+			320px / 16px = 20em<br><br>
+			480px / 16px = 30em<br><br>
+			600px / 16px = 37.5em<br><br>
+			768px / 16px = 48em<br><br>
+			1024px / 16px = 64em<br><br>
+			1200px / 16px = 75em
+		</p>
+		<hr class="margin">
+		<h1 class="center">¿Cómo usarlos?</h1>
+		<article class="container  font-0">
+			<div class="item  c4  inline-block  middle  center">
+				<h2>Desktop First</h2>
+				<img src="http://bextlan.com/img/para-cursos/desktop-first.png">
+			</div>
+			<h3 class="item  c4  inline-block  middle  center">¿Qué estrategia uso?</h3>
+			<div class="item  c4  inline-block  middle  center">
+				<h2>Mobile First</h2>
+				<img src="http://bextlan.com/img/para-cursos/mobile-first.png">
+			</div>
+			<div class="item  c4  inline-block  middle  center">
+				<p>Equipo de Escritorio<br>( <b>Ancho Pantalla > 1200px</b> )</p>
+			</div>
+			<h3 class="item  c4  inline-block  middle  center">CSS General</h3>
+			<div class="item  c4  inline-block  middle  center">
+				<p>Equipo Móvil<br>( <b>Ancho Pantalla <= 320px</b> )</p>
+			</div>
+			<div class="item  c4  inline-block  middle  center">
+				<p><b>max-width</b></p>
+			</div>
+			<h3 class="item  c4  inline-block  middle  center">Media Queries</h3>
+			<div class="item  c4  inline-block  middle  center">
+				<p><b>min-width</b></p>
+			</div>
+			<div class="item  c4  inline-block  middle  center">
+				<p>Del mayor al menor</p>
+				<p>75em</p>
+				<p>64em</p>
+				<p>48em</p>
+				<p>37.5em</p>
+				<p>30em</p>
+				<p>20em</p>
+			</div>
+			<h3 class="item  c4  inline-block  middle  center">Breakpoints</h3>
+			<div class="item  c4  inline-block  middle  center">
+				<p>Del menor al mayor</p>
+				<p>20em</p>
+				<p>30em</p>
+				<p>37.5em</p>
+				<p>48em</p>
+				<p>64em</p>
+				<p>75em</p>
+			</div>
+			<div class="item  c4  inline-block  middle  center">
+				<p><a href="desktop-first.html">Desktop First</a></p>
+			</div>
+			<h3 class="item  c4  inline-block  middle  center">Ejemplos</h3>
+			<div class="item  c4  inline-block  middle  center">
+				<p><a href="mobile-first.html">Mobile First</a></p>
+			</div>
+		</article>
+	</section>
+</body>
+</html>

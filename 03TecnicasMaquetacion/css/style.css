@@ -1,0 +1,40 @@
+h1, h2, h3 { margin: 1rem auto; }
+
+.container{ padding: 1rem; }
+
+.item {
+	height: 100px;
+	padding: 1rem;
+	font-size: 2rem;
+	border: thin solid #FF5700;
+}
+
+.float-usos {
+	text-align: left;
+	background-color: #222;
+}
+
+.float-usos p { font-size: 2rem; }
+
+.lista li {
+	/* 
+	display: inline-block;
+	*/
+	float: left;
+	width: 40%;
+}
+
+table {
+	display: inline-table;
+	margin: auto;
+	background-color: #CCC;
+	border: thin solid #FF5700;
+	border-collapse: collapse;
+}
+
+td {
+	padding: 1rem;
+	font-size: 2rem;
+	background-color: #222;
+	border: thin solid #FF5700;
+}

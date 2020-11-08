@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>Modernizr</title>
+	<meta name="description" content="En este documento explicaremos el concepto de Modernizr en el Responsible Design">
+	<link rel="stylesheet" href="../estilos.css">
+	<script src="js/modernizr.js"></script>
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">Modernizr</h1>
+		<a class="container  margin  center" href="progressive-disclousure.html">regresar</a>
+		<hr class="margin">
+		<p>
+			Es una librería JS que nos permite detectar las características HTML5 y CSS3 soportadas por nuestro navegador
+		</p>
+		<p>
+			Si el navegador no soporta la característica que pretendemos usar, Modernizr nos avisará y nos permitirá implementar algún <b>polyfill</b> que nos pueda ayudar a simular, soportar o reemplazar dicha característica en navegadores que no la soportan.
+		</p>
+		<ul>
+			<li><a href="http://modernizr.com" target="_blank">Sitio Web</a></li>
+			<li><a href="http://modernizr.com/docs/" target="_blank">Documentación</a></li>
+			<li><a href="http://modernizr.com/download/" target="_blank">Configurar la Descarga</a></li>
+		</ul>
+		<h3>¿Qué es un Polyfill?</h3>
+		<p>
+			Un polyfill o polyfiller, es una pieza de código (o plugin) que proporciona la tecnología que nosotros, los desarrolladores, esperamos que el navegador soporte de forma nativa. La generación de un pollyfill dependerá de la creatividad y habilidad del desarrollador.
+		</p>
+		<p>
+			Algunos <b><a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills" target="_blank">Pollyfills</a></b> ya hechos.
+		</p>
+		<h3>¿Cómo funciona Modernizr?</h3>
+		<pre>
+			<code>
+&lt;script src="js/modernizr.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+	var caracteristicaAEvaluar = {
+		test:Lo que voy a evaluar,
+
+		yep:"ruta/del/archivo-en-caso-de-soporte",
+		yep:["archivo1","archivo2","archivon"],
+
+		nope:"ruta/del/archivo-en-caso-de-no-soporte",
+		nope:["archivo1","archivo2","archivon"],
+
+		both:"ruta/del/archivo-requerido-en-ambos-casos",
+		both:["archivo1","archivo2","archivon"],
+
+		complete:function(){
+		
+			//Función que se ejecuta cuando los archivos han cargado
+			if(Modernizr.soportaCaracterística)
+			{
+				//Códigos en caso de soportar la característica
+			}
+			else
+			{
+				//Códigos en caso de NO soportar la característica
+			}
+
+		}
+	}
+
+	Modernizr.load(caracteristicaAEvaluar)
+&lt;/script&gt;
+			</code>
+		</pre>
+		<h3>Ejemplos</h3>
+		<ul>
+			<li>
+				<h4>Etiquetas Semánticas</h4>
+				<p>Si el navegador no reconoce las etiquetas semánticas de HTML5 forzar a que las detecte como cajas de bloque</p>
+				<div class="example">
+					<header>Header</header>
+					<article>Article</article>
+					<footer>Footer</footer>
+				</div>
+			</li>
+			<li>
+				<h4>Validación de formularios vacíos</h4>
+				<p>Si el navegador soporta el atributo requerido enviar el formulario, sino hacer la validación con JS</p>
+				<div class="example">
+					<form id="formulario" action="http://bextlan.com">
+						<div>
+							<label for="nombre">Nombre</label>
+							<input type="text" id="nombre" required>
+						</div>
+						<div>
+							<label for="twitter">Twitter</label>
+							<input type="text" id="twitter" required>
+						</div>
+						<div>
+							<input type="submit" id="enviar" value="Enviar">
+						</div>
+					</form>
+				</div>
+			</li>
+			<li>
+				<h4>Mostrar un calendario nativo de HTML5</h4>
+				<p>Si el navegador soporta el input de tipo fecha mostrar el calendario, sino mostrar uno hecho con JS</p>
+				<div class="example">
+					<input type="date" id="calendario" required>
+				</div>
+			</li>
+			<li>
+				<h4>Geolocalización</h4>
+				<p>Si el navegador soporta el API de Geolocalización mostrar un mapa embebido de Google Maps, sino un enlace a la página de Google Maps</p>
+				<div class="example" id="mapa"></div>
+			</li>
+			<li>
+				<h4>Video HTML5</h4>
+				<p>Si el navegador soporta la etiqueta video mostrar el video en formato HTML5, sino mostrarlo con FLASH</p>
+				<p>Si el navegador soporta la etiqueta video, estandarizar la presentación de los controles de reproducción</p>
+				<div class="example" id="video">
+					<video id="video-js" controls class="video-js  vjs-default-skin  vjs-big-play-centered" width="640" height="264">
+						<source src="video/el-mejor-amigo.mp4" type="video/mp4" />
+						<source src="video/el-mejor-amigo.webm" type="video/webm" />
+					</video>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<script>
+		var requiredAttribute = {
+			//test:Modernizr.input.required,
+			complete: function (){
+				if( Modernizr.input.required )
+				{
+					//alert('Tu navegador SI soporta el atributo required')
+				}
+				else
+				{
+					//alert('Tu navegador NO soporta el atributo required')
+
+					document.getElementById('formulario').onsubmit = function (){
+						return false;
+					}
+
+					document.getElementById('enviar').onclick = function (){
+						if( !document.getElementById('nombre').value || !document.getElementById('twitter').value )
+						{
+							alert('Los datos son requeridos')
+						}
+						else
+						{
+							document.getElementById('formulario').submit()
+						}
+					}
+				}
+			}
+		}
+
+		Modernizr.load(requiredAttribute)
+
+		var calendar = {
+			test:Modernizr.inputtypes.date,
+			nope:[
+				'http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css',
+				'http://code.jquery.com/jquery-1.10.2.js',
+				'http://code.jquery.com/ui/1.11.4/jquery-ui.js'
+			],
+			complete:function (){
+				if ( Modernizr.inputtypes.date )
+				{
+					//alert('Tu navegador SI soporta el input date')
+				}
+				else
+				{
+					//alert('Tu navegador NO soporta el input date')
+					$( "#calendario" ).datepicker()
+				}
+			}
+		}
+
+		Modernizr.load(calendar)
+
+		var geolocation = {
+			complete:function (){
+				if( Modernizr.geolocation )
+				{
+					//alert('Tu navegador SI soporta Geolocalización')
+					document.getElementById('mapa').innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.991624607563!2d2.294502757672119!3d48.8583701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTorre+Eiffel!5e0!3m2!1ses-419!2smx!4v1438648067414" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>'
+				}
+				else
+				{
+					//alert('Tu navegador NO soporta Geolocalización')
+					document.getElementById('mapa').innerHTML = '<a href="https://www.google.com.mx/maps/place/Torre+Eiffel/@48.8583701,2.2945028,17z/data=!4m7!1m4!3m3!1s0x47e66e2964e34e2d:0x8ddca9ee380ef7e0!2sTorre+Eiffel!3b1!3m1!1s0x47e66e2964e34e2d:0x8ddca9ee380ef7e0" target="_blank">Ver mapa</a>'
+				}
+			}
+		}
+
+		Modernizr.load(geolocation)
+
+		var video = {
+			test:Modernizr.video,
+			yep:[
+				'http://vjs.zencdn.net/4.12/video-js.css',
+				'http://vjs.zencdn.net/4.12/video.js'
+			],
+			complete:function (){
+				if( Modernizr.video )
+				{
+					//alert('Tu navegador SI soporta Video HTML5')
+					videojs("video-js", {}, function(){
+  						// Player (this) is initialized and ready.
+					});
+				}
+				else
+				{
+					//alert('Tu navegador NO soporta Video HTML5')
+					document.getElementById('video').innerHTML = '<iframe src="video/video.html" width="426" height="240"></iframe>'
+				}
+			}
+		}
+
+		Modernizr.load(video)
+	</script>
+</body>
+</html>

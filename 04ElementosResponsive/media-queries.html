@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>Media Queries</title>
+	<meta name="description" content="En este documento explicaremos el concepto de las media queries en el Responsive Design">
+	<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">Media Queries</h1>
+		<a class="container  margin  center" href="index.html">regresar</a>
+		<hr class="margin">
+		<p>
+			Desde la especificación de <a href="http://www.w3.org/TR/CSS2/" target="_blank">CSS 2.1</a>, las hojas de estilo han tenido cierto grado  de  capacidad para  el reconocimiento  de dispositivos mediante  el uso de tipos de medios. Por ejemplo:
+		</p>
+		<pre class="center">
+			<code>
+&lt;link rel="stylesheet" href="print.css" media="print"&gt;
+			</code>
+		</pre>
+		<p>
+			Con  CSS3,  la  W3C  perfeccionó  y  mejoró los  tipos  de  medios  con características  multimedia  y con  la  capacidad de  preguntar  dichas características a los medios.
+		</p>
+		<p>
+			Esto  no  sólo  hace posible  inspeccionar  el  contenido que  se entrega  al dispositivo, sino también las características físicas reales del dispositivo.
+		</p>
+		<p>
+			El  uso  de media  queries permite pedir fácilmente al  navegador  sus características,  tales  como  anchura,  altura,  relación  de  aspecto  y  la orientación.
+		</p>
+		<p>
+			La sintaxis es la siguiente:
+		</p>
+		<pre>
+			<code>
+@media screen and (max-width:480px) and (orientation:portrait) {
+	/* 
+	Código CSS que se aplicará cuando se cumpla la media queries
+	*/
+}				
+			</code>
+		</pre>
+		<p class="center"><a href="http://caniuse.com/#search=css3%20media" target="_blank">¿Puedo usarlas?</a></p class="center">
+		<p class="center"><a href="http://www.mediaqueri.es" target="_blank">Inspírate en mediaqueri.es</a></p>
+		<p>
+			La lista completa de características multimedia de la W3C, sobre <a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">media queries</a> es la siguiente:
+		</p>
+		<article class="container  font-0">
+			<h2 class="item  c3  inline-block  top  center  gray">Nombre</h2>
+			<h2 class="item  c6  inline-block  top  center  gray">Definición</h2>
+			<h2 class="item  c3  inline-block  top  center  gray">max/min</h2>
+			<p class="item  c3  inline-block  top  center">width</p>
+			<p class="item  c6  inline-block  top  center">El ancho del área de visualización</p>
+			<p class="item  c3  inline-block  top  center">SI</p>
+			<p class="item  c3  inline-block  top  center">height</p>
+			<p class="item  c6  inline-block  top  center">El alto del área de visualización</p>
+			<p class="item  c3  inline-block  top  center">SI</p>
+			<p class="item  c3  inline-block  top  center">device-width</p>
+			<p class="item  c6  inline-block  top  center">La anchura de la superficie de representación del dispositivo</p>
+			<p class="item  c3  inline-block  top  center">SI</p>
+			<p class="item  c3  inline-block  top  center">device-height</p>
+			<p class="item  c6  inline-block  top  center">La altura de la superficie de representación del dispositivo</p>
+			<p class="item  c3  inline-block  top  center">SI</p>
+			<p class="item  c3  inline-block  top  center">orientation</p>
+			<p class="item  c6  inline-block  top  center">Acepta los valores de portrait (vertical) y landscape (horizontal)</p>
+			<p class="item  c3  inline-block  top  center">NO</p>
+			<p class="item  c3  inline-block  top  center">aspect-ratio</p>
+			<p class="item  c6  inline-block  top  center">Relación entre la anchura de la zona de visualización de toda su altura.<br><br>Por ejemplo: en una computadora de escritorio, se podría consultar si la ventana del navegador se encuentra en una relación de 16:9</p>
+			<p class="item  c3  inline-block  top  center">SI</p>
+			<p class="item  c3  inline-block  top  center">device-aspect-ratio</p>
+			<p class="item  c6  inline-block  top  center">Proporción de anchura de la superficie de representación del dispositivo a través de su altura.<br><br>Por ejemplo: en una computadora de escritorio, se podría consultar si la pantalla está en una relación de 16:9</p>
+			<p class="item  c3  inline-block  top  center">SI</p>
+			<p class="item  c3  inline-block  top  center">color</p>
+			<p class="item  c6  inline-block  top  center">El número de bits por componente de color del dispositivo.<br><br>Por ejemplo, un dispositivo de color de 8 bits podría pasar con éxito una consulta de (color: 8). Dispositivos de color no deben devolver un valor de 0</p>
+			<p class="item  c3  inline-block  top  center">SI</p>
+			<p class="item  c3  inline-block  top  center">color-index</p>
+			<p class="item  c6  inline-block  top  center">El número de entradas en la tabla de búsqueda de color del dispositivo de salida.<br><br>Por ejemplo, @media screen and (min-color-index:256)</p>
+			<p class="item  c3  inline-block  top  center">SI</p>
+			<p class="item  c3  inline-block  top  center">monochrome</p>
+			<p class="item  c6  inline-block  top  center">Al igual que el color, la característica monocromática permite ponernos a prueba el número de bits por píxel en un dispositivo monocromático</p>
+			<p class="item  c3  inline-block  top  center">SI</p>
+			<p class="item  c3  inline-block  top  center">resolution</p>
+			<p class="item  c6  inline-block  top  center">Pruebas de la densidad de los píxeles en el dispositivo.<br><br>Por ejemplo, screen and (resolution:72dpi) or screen and (max-resolution:300dpi)</p>
+			<p class="item  c3  inline-block  top  center">SI</p>
+			<p class="item  c3  inline-block  top  center">scan</p>
+			<p class="item  c6  inline-block  top  center">Para la navegación basada en tv, mide si el proceso de exploración es progresiva o escaneo</p>
+			<p class="item  c3  inline-block  top  center">NO</p>
+			<p class="item  c3  inline-block  top  center">grid</p>
+			<p class="item  c6  inline-block  top  center">Comprueba si el dispositivo es una pantalla basada en la red, como los teléfonos con funciones con una fuente de ancho fijo. Se puede expresar simplemente como (grid)</p>
+			<p class="item  c3  inline-block  top  center">NO</p>
+		</article>
+	</section>
+</body>
+</html>

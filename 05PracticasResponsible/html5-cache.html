@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" manifest="ejemplo.appcache">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>HTML5 Caché</title>
+	<meta name="description" content="En este documento explicaremos el concepto de HTML5 Caché en el Responsible Design">
+	<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+	<section class="container">
+		<h1 class="center">HTML5 Caché</h1>
+		<a class="container  margin  center" href="index.html">regresar</a>
+		<hr class="margin">
+		<p>
+			HTML5 proporciona un mecanismo de caché que permite que las aplicaciones basadas en la web se ejecuten sin conexión. Los desarrolladores pueden usar la API para especificar los recursos que el navegador debería guardar en caché y tener disponibles para los usuarios cuando no estén conectados. Las aplicaciones que están en caché se cargan y funcionan correctamente aunque los usuarios hagan clic en el botón recargar cuando no están conectados.
+		</p>
+		<p>
+			Usar el caché de aplicaciones le da a la aplicación los siguientes beneficios:
+		</p>
+		<ul>
+			<li><b>Navegación sin conexión:</b> los usuarios pueden navegar un sitio aún cuando no estén conectados</li>
+			<li><b>Velocidad:</b> los recursos en caché son locales, y por lo tanto, se cargan más rápido</li>
+			<li><b>Carga al servidor reducida:</b> el navegador solamente descarga desde el servidor recursos que han cambiado</li>
+		</ul>
+		<h2>¿Cómo funciona?</h2>
+		<p>
+			Se debe incluir el atributo <b>manifest</b> en la etiqueta html
+		</p>
+		<pre>
+			<code>
+&lt;html manifest="ejemplo.appcache"&gt; 
+ 	...
+&lt;/html&gt;					
+			</code>
+		</pre>
+		<p>
+			El atributo manifest referencía un archivo manifest de caché, que es un archivo de texto que lista los recursos (archivos) que el navegador deberá guardar en caché para la aplicación.
+		</p>
+		<p>
+			Se debe incluir el atributo manifest en cada página de la aplicación que quiera guardar en caché. El navegador no guardará páginas que no contengan el atributo  manifest, a menos que esas páginas estén específicamente listadas en el archivo manifest en sí mismo. No es necesario listar todas las páginas que se quieran guardar en caché en el archivo de manfiesto, el navegador implícitamente agrega cada página que el usuario visite y tenga el atributo manifest establecido para caché de aplicación.
+		</p>
+		<h2>Cargando documentos</h2>
+		<p>
+			El uso de caché en aplicaciones modifica el proceso normal de la carga de un documento:
+		</p>
+		<ul>
+			<li>Si existe caché, el navegador carga el documento y sus recursos asociados directamente desde ahí, sin acceder a la red. Esto acelera el tiempo de carga del documento</li>
+			<li>El navegador entonces verifíca si hubo actualizaciones al manifest de caché en el servidor</li>
+			<li>Si el manifest de caché fue actualizado, el navegador descarga la nueva versión del archivo y de los recursos listados en él. Esto se realiza en segundo plano y no afecta el rendimiento de forma significativa</li>
+		</ul>
+		<h2>El archivo manifest de caché</h2>
+		<p>
+			El atributo manifest en una aplicación web puede especificar ya sea la ruta relativa de un archivo de manifest de caché o una URL absoluta (URLs absolutas deben estar en el mismo origen que la aplicación). Un archivo de manifest de caché puede tener cualquier extensión de archivo, pero debe ser enviada con el tipo MIME text/cache-manifest.
+		</p>
+		<p>
+			El archivo manifest de caché es un archivo de texto simple que lista los recursos que el navegador debería guardar en caché para acceder sin conexión. Los recursos son identificados por URI. Las entradas listadas en el manifest de caché deben tener el mismo esquema, servidor y puerto que el manifest. 
+		</p>
+		<p>
+			<pre>
+				<code>
+CACHE MANIFEST
+# v1 - 2015-07-17
+# Esto es un comentario.
+# Rutas Absolutas
+http://bextlan.com/index.html
+http://bextlan.com/encabezado.png
+http://bextlan.com/blah/blah
+# Rutas Relativas
+index.html
+encabezado.png
+blah/blah
+				</code>
+			</pre>
+		</p>
+		<h2>Más info</h2>		
+		<ul>
+			<li><a href="http://caniuse.com/#search=cache" target="_blank">¿Puedo usarla?</a></li>
+			<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Recursos_offline_en_firefox" target="_blank">App Cache MDN</a></li>
+			<li><a href="http://www.w3.org/TR/2008/WD-html5-20080122/#appcache" target="_blank">App Cache W3C</a></li>
+			<li><a href="https://html.spec.whatwg.org/multipage/browsers.html#offline" target="_blank">App Cache WHATWG</a></li>
+			<li><a href="http://www.html5rocks.com/en/tutorials/appcache/beginner/" target="_blank">App Cache HTML5 Rocks</a></li>
+			<li><a href="http://www.sitepoint.com/offline-web-application-tutorial/" target="_blank">How To Create an Offline Web Application</a></li>
+		</ul>
+	</section>
+</body>
+</html>

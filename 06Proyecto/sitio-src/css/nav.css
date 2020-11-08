@@ -1,0 +1,40 @@
+a.menu-link {
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: block;
+	padding: 1rem;
+}
+
+nav[role=navigation] {
+	-webkit-transition: all 0.3s ease-out;  
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.js nav[role=navigation] {
+	overflow: hidden;
+	max-height: 0;
+}
+
+/* 2rem del nav que es el contenedor + 3rem por cada enlace */
+nav[role=navigation].active { max-height: 14rem; }
+
+nav[role=navigation] ul { border-top: thin solid #808080; }
+
+nav[role=navigation] li { border-bottom: thin solid #808080; }
+	
+@media screen and (min-width: 48em) {
+	a.menu-link { display: none; }
+	
+	.js nav[role=navigation] { max-height: none; }
+	
+	nav[role=navigation] ul { border: 0; }
+			
+	nav[role=navigation]  li { 
+		display: inline-block;
+		border: 0; 
+	}
+}

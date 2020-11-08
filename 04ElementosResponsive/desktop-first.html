@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta charset="UTF-8">
+	<title>Responsive Design Desktop First</title>
+	<meta name="description" content="En este documento maquetaremos una plantilla de sitio web con Responsive Design y la filosofía Desktop First.">
+	<style>
+		html {
+			box-sizing: border-box;
+			font-family: sans-serif;
+			font-size: 16px;
+			text-align: center
+		}
+
+		*, *:before, *:after {
+			box-sizing: inherit;
+			margin: 0;
+			padding: 0;
+			font-size: 1rem;
+		}
+
+		a { 
+			color: #FF5700;
+			font-size: inherit;
+		}
+
+		a:hover { color: #205081; }
+
+		figcaption { padding: 1rem;	}
+
+		img { 
+			max-width:100%;
+			width:100%;
+			height: auto;
+		}
+
+		.header {
+			padding: 1rem;
+			color: #FFF;
+			background: #222;
+		}
+
+		.responsible {
+			display: block;
+			margin: auto;
+			width: 100%;
+			font-size: 0;
+		}
+
+		.responsible figcaption { font-size: 2rem; }
+
+		
+
+		.header img, .responsible img { max-width: 50%; }
+
+		.responsible figure {
+			display: inline-block;
+			padding: 1rem;
+			width: 25%;
+			vertical-align: top;
+		}
+
+
+		/*
+		Estilos Generales +1200px
+		Breakpoints para Responsive Design Desktop First:
+		1200px  1024px  768px  600px  480px  320px 
+		75em    64em    48em   37.5em  30em  20em
+		*/
+		
+		@media screen and (max-width: 75em){
+			.header { background-color: red; }
+
+			.responsible img { max-width: 75%; }
+
+			.responsible figcaption { font-size: 1.5rem; }
+		}
+
+		@media screen and (max-width: 64em){
+			.header { background-color: green; }
+
+			.responsible figure { width: 33.33%; }
+
+			.responsible figcaption { font-size: 2rem; }
+		}
+
+		@media screen and (max-width: 48em){
+			.header { background-color: blue; }
+
+			.header img { max-width: 75%; }
+
+			.responsible figure { width: 50%; }
+		}
+
+		@media screen and (max-width: 37.5em){
+			.header { background-color: cyan; }
+		}
+
+		@media screen and (max-width: 30em){
+			.header { background-color: magenta; }
+
+			.header img { max-width: 100%; }
+
+			.responsible figure { width: 100%; }
+		}
+
+		@media screen and (max-width: 20em){
+			.header { background-color: yellow; }
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<figure>
+			<img src="img/desktop-first.jpg">
+			<figcaption>
+				Documento hecho con <i>Responsive Design</i> y la estrategia <i>Desktop First</i>
+			</figcaption>
+		</figure>
+		<a href="breakpoints.html">regresar</a>
+	</header>
+	<section class="responsible">
+		<figure>
+			<img src="img/html5.png">
+			<figcaption>HTML</figcaption>
+		</figure>
+		<figure>
+			<img src="img/css3.png">
+			<figcaption>CSS</figcaption>
+		</figure>
+		<figure>
+			<img src="img/javascript.png">
+			<figcaption>JavaScript</figcaption>
+		</figure>
+		<figure>
+			<img src="img/responsive.png">
+			<figcaption>Responsive</figcaption>
+		</figure>
+	</section>
+</body>
+</html>
